@@ -1,4 +1,5 @@
-from ftns import getBankHolidayJson, getBankHolidays
+from ftns import getBankHolidayJson, getBankHolidays, addHolidays
 
-data = getBankHolidayJson()
-getBankHolidays(data)
+bankHolidaysJson = getBankHolidayJson()
+days = getBankHolidays('england-and-wales', bankHolidaysJson)
+addHolidays(days)
