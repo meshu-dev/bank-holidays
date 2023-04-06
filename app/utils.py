@@ -5,7 +5,7 @@ from urllib.request import Request, urlopen
 
 load_dotenv('.env')
 
-def getContentFromUrl(url):
+def get_content_from_url(url):
     req = Request(
         url=url
     )
@@ -14,20 +14,20 @@ def getContentFromUrl(url):
 
     return data
 
-def getBankHolidayJson():
+def get_bank_holiday_json():
     dataUrl = environ.get('BANK_HOLIDAYS_URL')
-    data = getContentFromUrl(dataUrl)
+    data = get_content_from_url(dataUrl)
     
     return data
 
-def getBankHolidays(division, jsonData):
-    ukBankHolidays = json.loads(jsonData)
-    englandBankHolidays = ukBankHolidays[division]
-    days = englandBankHolidays['events']
+def get_bank_holidays(division, json_data):
+    uk_bank_holidays = json.loads(json_data)
+    england_bank_holidays = uk_bank_holidays[division]
+    days = england_bank_holidays['events']
 
     return days
 
-def addHolidays(days):
+def add_holidays(days):
     for data in days:
         name = data['title']
         date = data['date']
