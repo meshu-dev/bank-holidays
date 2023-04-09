@@ -44,7 +44,7 @@ def add_holidays(days):
             holiday = add_holiday(name, date_str)
             print('New bank holiday:', holiday.name + ', ' + holiday.date.strftime('%d/%m/%y'))
         else:
-            print('Current bank holiday:', current_holiday.name + ', ' + current_holiday.date.strftime('%d/%m/%y'))
+            print('Existing bank holiday:', current_holiday.name + ', ' + current_holiday.date.strftime('%d/%m/%y'))
 
 def get_holiday_date(date_str):
     date_data = date_str.split('-')

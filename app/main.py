@@ -2,13 +2,17 @@ from flask import Flask, render_template
 import click
 from config import get_config
 from holidays import import_holidays
-from db.holidays import get_all_bank_holidays, get_bank_holiday_by_name_and_date
+from db.holidays import get_all_bank_holidays, get_next_bank_holiday, get_bank_holiday_by_name_and_date
 
 app = Flask(__name__, template_folder='../templates')
 app.config.from_object('config')
 
 @app.route('/')
 def index():
+    next_holiday = get_next_bank_holiday()
+
+    print('next', next_holiday.name, next_holiday.date)
+
     return render_template('index.html')
 
 @app.route('/test')
