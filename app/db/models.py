@@ -18,4 +18,3 @@ class BankHoliday(Base):
     date = Column(Date)
 
 Base.metadata.create_all(engine)
-

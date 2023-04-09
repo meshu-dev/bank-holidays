@@ -1,0 +1,43 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Verdana,Geneva,sans-serif; 
+  background-color: #1f883d;
+  color: #FFF;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#bankholiday-text {
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+#bankholiday-name {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+#bankholiday-date {
+  font-size: 4rem;
+}
+
