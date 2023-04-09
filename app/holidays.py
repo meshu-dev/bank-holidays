@@ -3,7 +3,7 @@ from datetime import date
 from time import gmtime, strftime
 from utils import get_content_from_url
 from config import get_config
-from db.holidays import add_bank_holiday
+from db.holidays import add_bank_holiday, get_bank_holiday_by_name_and_date
 
 def get_bank_holiday_json():
     dataUrl = get_config('BANK_HOLIDAYS_URL')
@@ -35,9 +35,16 @@ def get_next_bank_holidays(division, json_data):
 
 def add_holidays(days):
     for data in days:
-        holiday = add_holiday(data['title'], data['date'])
+        name = data['title']
+        date_str = data['date']
 
-        print('DB Holiday', holiday.name, holiday.date)
+        current_holiday = get_bank_holiday_by_name_and_date(name, date_str)
+
+        if current_holiday is None:
+            holiday = add_holiday(name, date_str)
+            print('New bank holiday:', holiday.name + ', ' + holiday.date.strftime('%d/%m/%y'))
+        else:
+            print('Current bank holiday:', current_holiday.name + ', ' + current_holiday.date.strftime('%d/%m/%y'))
 
 def get_holiday_date(date_str):
     date_data = date_str.split('-')
