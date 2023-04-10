@@ -1,23 +1,20 @@
 from flask import Flask, render_template
 from config import get_config
-from holidays import import_holidays
-from db.holidays import get_all_bank_holidays, get_next_bank_holiday, get_bank_holiday_by_name_and_date
-from utils import get_day_suffix
+from holiday.view import get_next_bank_holiday_data
+from holiday.script import import_holidays
 
 app = Flask(__name__, template_folder='templates')
 app.config.from_object('config')
 
 @app.route('/')
 def index():
-    next_holiday = get_next_bank_holiday()
-    day = next_holiday.date.day
-    suffix = get_day_suffix(day)
+    next_holiday = get_next_bank_holiday_data()
 
     return render_template(
         'index.html',
         title='Next bank holiday',
-        next_bank_holiday=next_holiday,
-        suffix=suffix
+        next_holiday_name=next_holiday['name'],
+        next_holiday_date=next_holiday['date']
     )
 
 @app.cli.command('import-data')

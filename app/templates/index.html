@@ -4,8 +4,8 @@
     <div class="container">
         <div class="content">
             <div id="bankholiday-text">Next bank holiday</div>
-            <div id="bankholiday-name">{{ next_bank_holiday.name }}</div>
-            <div id="bankholiday-date">{{ next_bank_holiday.date.strftime('%A %d{S} %B %Y').replace('{S}', suffix) }}</div>
+            <div id="bankholiday-name">{{ next_holiday_name }}</div>
+            <div id="bankholiday-date">{{ next_holiday_date }}</div>
         </div>
     </div>
 {% endblock %}

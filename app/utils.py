@@ -16,8 +16,8 @@ def get_file_path(file):
 
 def get_day_suffix(day):
     if 4 <= day <= 20 or 24 <= day <= 30:
-        suffix = "th"
+        suffix = 'th'
     else:
-        suffix = ["st", "nd", "rd"][day % 10 - 1]
+        suffix = ['st', 'nd', 'rd'][day % 10 - 1]
     
     return suffix
