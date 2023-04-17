@@ -44,6 +44,15 @@ While inside project folder run pipreqs to generate requirements.txt file.
 pipreqs .
 ```
 
+### Install packages
+
+Run the following to install packages.
+
+```
+pip install -r requirements.txt
+```
+
+
 ## ToDo
 
 App hasn't been setup on a server yet.
