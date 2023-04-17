@@ -27,3 +27,11 @@ flask --app=app/main.py run
 ```
 flask --app=app/main.py --debug run
 ```
+
+Go to url to view app which should be http://127.0.0.1:5000.
+
+## To do
+
+App hasn't been setup on a server yet.
+
+Will update instructions after site is live.
