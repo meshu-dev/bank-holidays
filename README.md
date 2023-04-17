@@ -30,7 +30,21 @@ flask --app=app/main.py --debug run
 
 Go to url to view app which should be http://127.0.0.1:5000.
 
-## To do
+## Generate requirements.txt
+
+Install the following to get packages for project.
+
+```
+pip install pipreqs
+```
+
+While inside project folder run pipreqs to generate requirements.txt file.
+
+```
+pipreqs .
+```
+
+## ToDo
 
 App hasn't been setup on a server yet.
 
